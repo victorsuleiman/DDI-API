@@ -1,0 +1,7 @@
+requests
+fastapi
+uvicorn
+pytest
+pytest-cov
+pytest-html
+httpx

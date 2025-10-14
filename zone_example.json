@@ -1,0 +1,17 @@
+
+{
+  "id" : 1,
+  "name": "example.com",
+  "kind": "primary",
+  "default_ttl": 3600,
+  "nameservers": ["ns1.example.net.", "ns2.example.net."],
+  "soa": {
+    "primary_ns": "ns1.example.net.",
+    "admin_email": "hostmaster.example.com.",
+    "serial": 2025101301,
+    "refresh": 7200,
+    "retry": 3600,
+    "expire": 1209600,
+    "minimum": 300
+  }
+}
