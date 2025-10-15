@@ -10,11 +10,13 @@ DB: dict[int, Zone] = {}
 def list_zones():
     return list(DB.values())
 
-
+#TODO: test for all validations with bad and good examples
 @router.post("", status_code=201)
 def create_zone(zone: Zone):
     if zone.id in DB:
         raise HTTPException(status_code=409, detail="Item exists")
+    if _name_exists(zone.name):
+        raise HTTPException(409, "Zone name already exists")
     DB[zone.id] = zone
     return zone
 
@@ -47,3 +49,9 @@ def delete_zone(zone_id: int):
     if zone_id not in DB:
         raise HTTPException(status_code=404, detail="Not found")
     del DB[zone_id]
+
+def _name_exists(name: str, exclude_id: int | None = None) -> bool:
+    for z in DB.values():
+        if z.name == name and z.id != exclude_id:
+            return True
+    return False
