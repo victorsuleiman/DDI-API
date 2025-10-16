@@ -1,0 +1,56 @@
+{
+    "normal_fqdn": {
+        "primary_ns": "example.com",
+        "admin_email": "hostmaster.example.com.",
+        "serial": 2025101301,
+        "refresh": 7200,
+        "retry": 3600,
+        "expire": 1209600,
+        "minimum": 300
+    },
+    "trailing_dot_uppercase": {
+        "primary_ns": "ExaMple.cOm.",
+        "admin_email": "hostmaster.example.com.",
+        "serial": 2025101301,
+        "refresh": 7200,
+        "retry": 3600,
+        "expire": 1209600,
+        "minimum": 300
+    },
+    "serial_1": {
+        "primary_ns": "example.com",
+        "admin_email": "hostmaster.example.com.",
+        "serial": 1,
+        "refresh": 7200,
+        "retry": 3600,
+        "expire": 1209600,
+        "minimum": 300
+    },
+    "serial_2_147_483_646": {
+        "primary_ns": "example.com",
+        "admin_email": "hostmaster.example.com.",
+        "serial": 2147483646,
+        "refresh": 7200,
+        "retry": 3600,
+        "expire": 1209600,
+        "minimum": 300
+    },
+    "serial_2_147_483_647": {
+        "primary_ns": "example.com",
+        "admin_email": "hostmaster.example.com.",
+        "serial": 2147483647,
+        "refresh": 7200,
+        "retry": 3600,
+        "expire": 1209600,
+        "minimum": 300
+    },
+    "refresh+3_positive": {
+        "primary_ns": "example.com",
+        "admin_email": "hostmaster.example.com.",
+        "serial": 2025101301,
+        "refresh": 2,
+        "retry": 1,
+        "expire": 3,
+        "minimum": 500
+    }
+}
