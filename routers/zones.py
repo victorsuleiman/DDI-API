@@ -6,7 +6,7 @@ router = APIRouter(prefix="/zones", tags=["zones"])
 
 DB: dict[int, Zone] = {}
 
-@router.get("")
+@router.get("", status_code=200)
 def list_zones():
     return list(DB.values())
 
@@ -21,7 +21,7 @@ def create_zone(zone: Zone):
     return zone
 
 
-@router.get("/{zone_id}")
+@router.get("/{zone_id}", status_code=200)
 def get_zone_by_id(zone_id: int):
     if zone_id not in DB:
         raise HTTPException(status_code=404, detail="Not found")
@@ -49,6 +49,7 @@ def delete_zone(zone_id: int):
     if zone_id not in DB:
         raise HTTPException(status_code=404, detail="Not found")
     del DB[zone_id]
+
 
 def _name_exists(name: str, exclude_id: int | None = None) -> bool:
     for z in DB.values():
